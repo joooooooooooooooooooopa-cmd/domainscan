@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DomainScan — Проверка сайтов на мошенничество | Trust Score 0–100</title>
+<meta name="description" content="Проверьте любой сайт за 30 секунд. Trust Score 0–100, 80+ параметров, граф связей доменов. Бесплатно." />
+<meta property="og:title" content="DomainScan — Проверка сайтов за 30 секунд" />
+<meta property="og:description" content="Trust Score 0–100, 80+ параметров, граф связей. Бесплатно." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+<!-- =========================== NAV =========================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <circle cx="11" cy="11" r="2.4"/><line x1="12.8" y1="12.8" x2="15" y2="15"/>
+        </svg>
+      </span>
+      <span>DomainScan</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Возможности</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <button class="menu-btn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <a class="btn btn-ghost" href="#">Войти</a>
+      <a class="btn btn-primary" href="#hero-scan">Проверить домен</a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================== HERO =========================== -->
+<section class="hero" data-screen-label="01 Hero">
+  <!-- background layers -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="grid-mask"></div>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="scan-beam"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <a class="pill" href="#">
+      <span class="pill-dot"></span>
+      <span>Проверено <b><span class="counter" data-count="50000">0</span>+</b> доменов · обновление май 2026</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+
+    <h1 class="hero-title">
+      Узнайте, можно ли доверять<br>
+      <span class="title-stack">
+        <span class="word-anim">любому</span> сайту
+      </span>
+    </h1>
+
+    <p class="hero-sub">
+      Trust&nbsp;Score 0–100 за 30 секунд. Проверка по 80+ параметрам.<br>
+      Домен, SSL, юридика, репутация, связи — всё в одном отчёте.
+    </p>
+
+    <!-- scan input -->
+    <form id="hero-scan" class="scan-form">
+      <div class="scan-field">
+        <span class="scan-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input id="scanInput" type="text" autocomplete="off" spellcheck="false" placeholder="example.com, bank.example.com, любой URL…" />
+        <button class="btn-scan" type="submit">
+          <span class="lbl">Проверить</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+        </button>
+      </div>
+      <div class="scan-meta">
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Бесплатно</span>
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Без регистрации</span>
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 проверки в день</span>
+      </div>
+    </form>
+
+    <!-- result mockup -->
+    <div class="result-mockup floaty" id="resultMockup">
+      <div class="rm-glow"></div>
+      <header class="rm-head">
+        <div class="rm-domain">
+          <span class="rm-fav"></span>
+          <span class="mono rm-domain-text" id="rmDomain">shop.example.com</span>
+          <span class="rm-https"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 11V7a4 4 0 0 0-8 0v4"/><rect x="3" y="11" width="18" height="11" rx="2"/></svg> https</span>
+        </div>
+        <div class="rm-stamp">
+          <span class="dot"></span>
+          <span>проверено сейчас · 28 сек</span>
+        </div>
+      </header>
+
+      <div class="rm-body">
+        <div class="rm-score-col">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 120 120" width="148" height="148">
+              <defs>
+                <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#84CC16"/>
+                  <stop offset="100%" stop-color="#22C55E"/>
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="50" stroke="#EEF2F7" stroke-width="10" fill="none"/>
+              <circle id="rmRing" class="rm-ring" cx="60" cy="60" r="50" stroke="url(#ringGrad)" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-90 60 60)"
+                stroke-dasharray="314" stroke-dashoffset="314" />
+            </svg>
+            <div class="ring-val">
+              <div class="mono ring-num" id="rmScore">0</div>
+              <div class="ring-sub">/ 100</div>
+            </div>
+          </div>
+          <div class="verdict v-y">
+            <span class="vdot"></span>Mostly OK · доверять с осторожностью
+          </div>
+        </div>
+
+        <div class="rm-bars">
+          <div class="bar-row"><span class="bar-lbl">Домен</span><div class="bar"><i style="--w:100%;background:#22C55E"></i></div><span class="bar-v mono">100</span></div>
+          <div class="bar-row"><span class="bar-lbl">Инфраструктура</span><div class="bar"><i style="--w:88%;background:#22C55E"></i></div><span class="bar-v mono">88</span></div>
+          <div class="bar-row"><span class="bar-lbl">Безопасность</span><div class="bar"><i style="--w:80%;background:#84CC16"></i></div><span class="bar-v mono">80</span></div>
+          <div class="bar-row"><span class="bar-lbl">Юр. прозрачность</span><div class="bar"><i style="--w:30%;background:#F97316"></i></div><span class="bar-v mono">30</span></div>
+          <div class="bar-row"><span class="bar-lbl">Технологии</span><div class="bar"><i style="--w:82%;background:#22C55E"></i></div><span class="bar-v mono">82</span></div>
+          <div class="bar-row"><span class="bar-lbl">Репутация</span><div class="bar"><i style="--w:75%;background:#84CC16"></i></div><span class="bar-v mono">75</span></div>
+          <div class="bar-row"><span class="bar-lbl">Граф связей</span><div class="bar"><i style="--w:90%;background:#22C55E"></i></div><span class="bar-v mono">90</span></div>
+        </div>
+      </div>
+
+      <footer class="rm-foot">
+        <div class="rm-tags">
+          <span class="tag good"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> SSL · EV</span>
+          <span class="tag good"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 11 лет</span>
+          <span class="tag good"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Cloudflare</span>
+          <span class="tag good"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> DNSSEC</span>
+          <span class="tag bad"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Нет Privacy</span>
+        </div>
+        <a class="rm-more" href="#" id="fullReportBtn">Полный отчёт <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </footer>
+    </div>
+
+    <!-- live ticker -->
+    <div class="ticker" aria-hidden="true">
+      <span class="ticker-label">Сейчас проверяют</span>
+      <div class="ticker-track">
+        <div class="ticker-row">
+          <span class="t-item"><span class="t-dot g"></span> example.com <b class="mono">98</b></span>
+          <span class="t-item"><span class="t-dot r"></span> btc-wallet-pro.test <b class="mono">14</b></span>
+          <span class="t-item"><span class="t-dot y"></span> shop-new.example <b class="mono">62</b></span>
+          <span class="t-item"><span class="t-dot g"></span> shop.example.org <b class="mono">96</b></span>
+          <span class="t-item"><span class="t-dot r"></span> examp1ebank-pay.invalid <b class="mono">8</b></span>
+          <span class="t-item"><span class="t-dot o"></span> crypt0-airdrop.example <b class="mono">22</b></span>
+          <span class="t-item"><span class="t-dot g"></span> example.org <b class="mono">97</b></span>
+          <span class="t-item"><span class="t-dot y"></span> mini-loans.test <b class="mono">58</b></span>
+        </div>
+        <div class="ticker-row" aria-hidden="true">
+          <span class="t-item"><span class="t-dot g"></span> example.com <b class="mono">98</b></span>
+          <span class="t-item"><span class="t-dot r"></span> btc-wallet-pro.test <b class="mono">14</b></span>
+          <span class="t-item"><span class="t-dot y"></span> shop-new.example <b class="mono">62</b></span>
+          <span class="t-item"><span class="t-dot g"></span> shop.example.org <b class="mono">96</b></span>
+          <span class="t-item"><span class="t-dot r"></span> examp1ebank-pay.invalid <b class="mono">8</b></span>
+          <span class="t-item"><span class="t-dot o"></span> crypt0-airdrop.example <b class="mono">22</b></span>
+          <span class="t-item"><span class="t-dot g"></span> example.org <b class="mono">97</b></span>
+          <span class="t-item"><span class="t-dot y"></span> mini-loans.test <b class="mono">58</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SOCIAL PROOF =========================== -->
+<section class="social" data-screen-label="02 Sources">
+  <div class="container social-inner">
+    <span class="social-label">Данные из <b>25+ источников</b></span>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="src">Google Safe Browsing</span>
+        <span class="src">crt.sh</span>
+        <span class="src">Wayback Machine</span>
+        <span class="src">Spamhaus</span>
+        <span class="src">VirusTotal</span>
+        <span class="src">Phishtank</span>
+        <span class="src">ipinfo</span>
+        <span class="src">RDAP</span>
+        <span class="src">AbuseIPDB</span>
+        <span class="src">SecurityTrails</span>
+        <span class="src">Trustpilot</span>
+        <span class="src">ScamAdviser</span>
+        <!-- duplicate for loop -->
+        <span class="src">Google Safe Browsing</span>
+        <span class="src">crt.sh</span>
+        <span class="src">Wayback Machine</span>
+        <span class="src">Spamhaus</span>
+        <span class="src">VirusTotal</span>
+        <span class="src">Phishtank</span>
+        <span class="src">ipinfo</span>
+        <span class="src">RDAP</span>
+        <span class="src">AbuseIPDB</span>
+        <span class="src">SecurityTrails</span>
+        <span class="src">Trustpilot</span>
+        <span class="src">ScamAdviser</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== HOW IT WORKS =========================== -->
+<section class="how" data-screen-label="03 How">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Процесс</span>
+      <h2>Как это работает</h2>
+      <p class="sub">Три шага — от ссылки до полной картины. Никакой регистрации.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-tag"><span class="step-num">01</span><span>Вставьте ссылку</span></div>
+        <h3>Любой URL подойдёт</h3>
+        <p>Скопируйте адрес подозрительного сайта или просто введите домен. Мы сами разберёмся в формате.</p>
+        <div class="step-illu illu-paste">
+          <div class="il-field">
+            <span class="il-cursor"></span><span class="il-typed mono"></span>
+          </div>
+          <div class="il-row">
+            <span class="il-chip">https://</span>
+            <span class="il-chip">www.</span>
+            <span class="il-chip">/path</span>
+            <span class="il-chip">?utm=…</span>
+          </div>
+          <div class="il-note">Парсим и нормализуем автоматически</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-tag"><span class="step-num">02</span><span>Получите Trust Score</span></div>
+        <h3>30 секунд — 80+ параметров</h3>
+        <p>Проверка по 25+ источникам в реальном времени: WHOIS, DNS, SSL, blacklists, аналитика, юридика.</p>
+        <div class="step-illu illu-scan">
+          <ul class="scan-lines">
+            <li><span class="ic ok">✓</span><span>WHOIS · 18.4 лет</span><span class="t mono">·</span></li>
+            <li><span class="ic ok">✓</span><span>DNS · 4 NS, DNSSEC</span><span class="t mono">·</span></li>
+            <li><span class="ic ok">✓</span><span>SSL · EV, A+</span><span class="t mono">·</span></li>
+            <li><span class="ic warn">!</span><span>Privacy Policy · не найдена</span><span class="t mono">·</span></li>
+            <li><span class="ic ok">✓</span><span>Blacklists · чисто</span><span class="t mono">·</span></li>
+            <li><span class="ic ok">✓</span><span>Граф · 0 рисковых связей</span><span class="t mono">·</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-tag"><span class="step-num">03</span><span>Изучите отчёт</span></div>
+        <h3>Полная картина в один экран</h3>
+        <p>SSL, юридика, репутация, технологии, связи с другими доменами. Делитесь PDF/JSON или используйте API.</p>
+        <div class="step-illu illu-report">
+          <div class="r-tab active">Обзор</div>
+          <div class="r-tab">Граф</div>
+          <div class="r-tab">Сигналы</div>
+          <div class="r-tab">JSON</div>
+          <div class="r-pane">
+            <div class="r-mini-bar"><i style="--w:92%"></i></div>
+            <div class="r-mini-bar"><i style="--w:78%"></i></div>
+            <div class="r-mini-bar"><i style="--w:30%;background:#F97316"></i></div>
+            <div class="r-mini-bar"><i style="--w:88%"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== WHAT WE CHECK (BENTO) =========================== -->
+<section class="check" id="features" data-screen-label="04 What we check">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Что проверяем</span>
+      <h2>80+ параметров в 7 категориях</h2>
+      <p class="sub">От технической инфраструктуры до юридической прозрачности и репутации.</p>
+    </div>
+
+    <div class="bento">
+      <!-- Domain -->
+      <div class="bento-card b-domain">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <h4>Домен и регистрация</h4>
+        </div>
+        <p>Возраст, регистратор, полный WHOIS, DNSSEC, история смены владельцев.</p>
+        <div class="b-illu">
+          <div class="whois-card">
+            <div class="wr"><span>created</span><b class="mono">2007-03-19</b></div>
+            <div class="wr"><span>registrar</span><b class="mono">MarkMonitor</b></div>
+            <div class="wr"><span>dnssec</span><b class="mono ok">signed</b></div>
+            <div class="wr"><span>age</span><b class="mono">18.4y</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infra -->
+      <div class="bento-card b-infra">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>
+          <h4>Инфраструктура</h4>
+        </div>
+        <p>IP, ASN, DNS, CDN, облачный провайдер, latency и соседи по серверу.</p>
+        <div class="b-illu">
+          <div class="infra-stack">
+            <div class="is-row"><span>CDN</span><b>Cloudflare</b></div>
+            <div class="is-row"><span>ASN</span><b class="mono">AS13335</b></div>
+            <div class="is-row"><span>IP</span><b class="mono">104.18.32.7</b></div>
+            <div class="is-row"><span>Latency</span><b class="mono">14 ms</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="bento-card b-sec">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <h4>Безопасность</h4>
+        </div>
+        <p>SSL/TLS, blacklists, security headers, фишинг, тайпсквоты, homoglyph.</p>
+        <div class="b-illu">
+          <div class="bl-list">
+            <div class="bl-row"><span class="bl-name">Google Safe Browsing</span><span class="bl-st ok">clean</span></div>
+            <div class="bl-row"><span class="bl-name">Spamhaus DBL</span><span class="bl-st ok">clean</span></div>
+            <div class="bl-row"><span class="bl-name">Phishtank</span><span class="bl-st ok">clean</span></div>
+            <div class="bl-row"><span class="bl-name">SURBL</span><span class="bl-st ok">clean</span></div>
+            <div class="bl-row"><span class="bl-name">URLhaus</span><span class="bl-st checking">checking…</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal -->
+      <div class="bento-card b-legal">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11V7a4 4 0 0 0-8 0v4"/><rect x="3" y="11" width="18" height="11" rx="2"/></svg></span>
+          <h4>Юр. прозрачность</h4>
+        </div>
+        <p>ToS, Privacy Policy, юр. лицо, лицензии (MGA/UKGC), контакты, юрисдикция.</p>
+        <div class="b-illu">
+          <ul class="legal-list">
+            <li class="ok"><span>Terms of Service</span><b>найдено</b></li>
+            <li class="ok"><span>Privacy Policy</span><b>найдено</b></li>
+            <li class="bad"><span>Refund Policy</span><b>не найдено</b></li>
+            <li class="ok"><span>Юр. лицо</span><b>Stripe Inc.</b></li>
+            <li class="ok"><span>Юрисдикция</span><b>US · DE</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tech -->
+      <div class="bento-card b-tech">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <h4>Технологии</h4>
+        </div>
+        <p>CMS, фреймворк, аналитика, платёжные системы, чаты, A/B-тулы.</p>
+        <div class="b-illu">
+          <div class="tech-grid">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">Cloudflare</span>
+            <span class="tech-pill">Segment</span>
+            <span class="tech-pill">Stripe</span>
+            <span class="tech-pill">Datadog</span>
+            <span class="tech-pill">Sentry</span>
+            <span class="tech-pill">GA4</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reputation -->
+      <div class="bento-card b-rep">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <h4>Репутация</h4>
+        </div>
+        <p>Web Archive, индексация Google/Yandex, отзывы Trustpilot, соцсети.</p>
+        <div class="b-illu">
+          <div class="rep-rows">
+            <div class="rep-row"><span>Trustpilot</span><span class="stars">★★★★<span class="dim">★</span></span><b class="mono">4.2</b></div>
+            <div class="rep-row"><span>Wayback snapshots</span><b class="mono">2 184</b></div>
+            <div class="rep-row"><span>Google indexed</span><b class="mono">~1.2M</b></div>
+            <div class="rep-row"><span>First seen</span><b class="mono">Mar 2007</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graph — flagship -->
+      <div class="bento-card b-graph">
+        <div class="b-head">
+          <span class="b-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+          <h4>Граф связей</h4>
+          <span class="flag-badge">Флагман</span>
+        </div>
+        <p>Общие IP, GA-ID, SSL SAN, favicon, NS-пара — находим скрытые сети, которые не видят другие сервисы.</p>
+        <div class="b-illu graph-illu">
+          <svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid meet">
+            <g stroke-width="1" fill="none" opacity=".7">
+              <line class="dashflow" x1="160" y1="70" x2="80" y2="40" stroke="#3B82F6"/>
+              <line class="dashflow" x1="160" y1="70" x2="80" y2="110" stroke="#3B82F6"/>
+              <line class="dashflow" x1="160" y1="70" x2="240" y2="40" stroke="#3B82F6"/>
+              <line class="dashflow" x1="160" y1="70" x2="240" y2="110" stroke="#3B82F6"/>
+              <line class="dashflow" x1="240" y1="40" x2="290" y2="60" stroke="#3B82F6"/>
+              <line class="dashflow" x1="240" y1="110" x2="290" y2="90" stroke="#3B82F6"/>
+            </g>
+            <circle cx="160" cy="70" r="10" fill="#1E40AF"/>
+            <circle cx="80" cy="40" r="6" fill="#3B82F6"/>
+            <circle cx="80" cy="110" r="6" fill="#3B82F6"/>
+            <circle cx="240" cy="40" r="7" fill="#3B82F6"/>
+            <circle cx="240" cy="110" r="6" fill="#3B82F6"/>
+            <circle cx="290" cy="60" r="4" fill="#93C5FD"/>
+            <circle cx="290" cy="90" r="4" fill="#93C5FD"/>
+            <circle cx="160" cy="70" r="14" fill="none" stroke="#1E40AF" class="gpulse"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== LIVE COMPARISON =========================== -->
+<section class="compare" data-screen-label="05 Compare">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Увидьте разницу</span>
+      <h2>Один взгляд — и всё ясно</h2>
+      <p class="sub">Алгоритм считает то же, что видел бы опытный analyst — но за 30 секунд.</p>
+    </div>
+
+    <div class="cmp-wrap">
+      <div class="cmp-card cmp-good" data-side="left">
+        <div class="cmp-glow"></div>
+        <div class="cmp-bar good"></div>
+        <header class="cmp-head">
+          <div class="cmp-domain mono">bank.example.com</div>
+          <span class="cmp-verdict good"><span class="vdot"></span>Доверять</span>
+        </header>
+        <div class="cmp-score-row">
+          <div class="mono cmp-score" data-val="94">0</div>
+          <div class="cmp-score-meta">
+            <div class="cmp-score-bar"><i class="good" style="--w:94%"></i></div>
+            <div class="cmp-score-lbl">Trust Score · /100</div>
+          </div>
+        </div>
+        <ul class="cmp-list">
+          <li><span class="ic ok">✓</span> Домен <b>18+ лет</b></li>
+          <li><span class="ic ok">✓</span> OV-сертификат · Example Bank Ltd</li>
+          <li><span class="ic ok">✓</span> ToS + Privacy Policy + контакты</li>
+          <li><span class="ic ok">✓</span> ASN: Example Bank (AS64500)</li>
+          <li><span class="ic ok">✓</span> Полное юр. раскрытие · ИНН, ОГРН</li>
+        </ul>
+      </div>
+
+      <div class="cmp-vs">
+        <span>VS</span>
+      </div>
+
+      <div class="cmp-card cmp-bad" data-side="right">
+        <div class="cmp-glow"></div>
+        <div class="cmp-bar bad"></div>
+        <header class="cmp-head">
+          <div class="cmp-domain mono">examp1ebank-security.test</div>
+          <span class="cmp-verdict bad"><span class="vdot"></span>Опасно</span>
+        </header>
+        <div class="cmp-score-row">
+          <div class="mono cmp-score" data-val="8">0</div>
+          <div class="cmp-score-meta">
+            <div class="cmp-score-bar"><i class="bad" style="--w:8%"></i></div>
+            <div class="cmp-score-lbl">Trust Score · /100</div>
+          </div>
+        </div>
+        <ul class="cmp-list">
+          <li><span class="ic bad">!</span> Домен <b>3 дня</b></li>
+          <li><span class="ic bad">!</span> Паттерн тайпсквота · <b class="mono">1 вместо l</b></li>
+          <li><span class="ic bad">!</span> WHOIS скрыт · приватизация</li>
+          <li><span class="ic bad">!</span> Нет юр. информации</li>
+          <li><span class="ic bad">!</span> <b>Тайпсквот</b> bank.example.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== GRAPH FEATURE =========================== -->
+<section class="graph-feat" data-screen-label="06 Graph">
+  <div class="container">
+    <div class="graph-panel">
+      <div class="gp-stars" aria-hidden="true"></div>
+
+      <div class="gp-header">
+        <span class="eyebrow eyebrow-dark">Флагман</span>
+        <h2>Граф связей — наша суперсила</h2>
+        <p class="gp-sub">Находим скрытые связи между сайтами, которые не видит никто. Один скам никогда не работает один.</p>
+      </div>
+
+      <div class="gp-grid">
+        <div class="gp-canvas">
+          <svg viewBox="0 0 560 420" preserveAspectRatio="xMidYMid meet" width="100%">
+            <defs>
+              <radialGradient id="centerRG" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#EF4444" stop-opacity=".55"/>
+                <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="clusterRG" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F97316" stop-opacity=".3"/>
+                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="safeRG" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#22C55E" stop-opacity=".18"/>
+                <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- glow areas -->
+            <circle cx="280" cy="210" r="120" fill="url(#centerRG)"/>
+            <ellipse cx="430" cy="120" rx="110" ry="80" fill="url(#clusterRG)"/>
+            <circle cx="100" cy="320" r="70" fill="url(#safeRG)"/>
+
+            <!-- scam network label -->
+            <g transform="translate(370,40)">
+              <rect x="0" y="0" width="170" height="26" rx="13" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.45)"/>
+              <text x="85" y="17" text-anchor="middle" fill="#FDBA74" font-family="JetBrains Mono" font-size="11" font-weight="600">скам-сеть · 12 доменов</text>
+            </g>
+
+            <!-- edges -->
+            <g class="gedges" stroke-width="1.4" fill="none">
+              <path id="e1" d="M280,210 L150,90" stroke="#3B82F6" opacity=".55"/>
+              <path id="e2" d="M280,210 L120,250" stroke="#EF4444" opacity=".55"/>
+              <path id="e3" d="M280,210 L430,120" stroke="#F97316" opacity=".55"/>
+              <path id="e4" d="M280,210 L470,250" stroke="#EAB308" opacity=".55"/>
+              <path id="e5" d="M280,210 L390,330" stroke="#EF4444" opacity=".55"/>
+              <path id="e6" d="M280,210 L210,340" stroke="#3B82F6" opacity=".5"/>
+
+              <path id="e7" d="M430,120 L500,90" stroke="#F97316" opacity=".45"/>
+              <path id="e8" d="M430,120 L500,160" stroke="#F97316" opacity=".45"/>
+              <path id="e9" d="M430,120 L370,70" stroke="#F97316" opacity=".45"/>
+              <path id="e10" d="M430,120 L460,200" stroke="#F97316" opacity=".4"/>
+
+              <path d="M150,90 L80,70" stroke="#475569" opacity=".4"/>
+              <path d="M120,250 L80,310" stroke="#475569" opacity=".4"/>
+              <path d="M210,340 L120,250" stroke="#475569" opacity=".35"/>
+
+              <!-- safe cluster (faded, no connection) -->
+              <path d="M100,320 L60,290" stroke="#22C55E" opacity=".25"/>
+              <path d="M100,320 L150,360" stroke="#22C55E" opacity=".25"/>
+            </g>
+
+            <!-- traveling data packets on edges -->
+            <g class="packets">
+              <circle r="2.2" fill="#93C5FD"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
+              <circle r="2.2" fill="#FCA5A5"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
+              <circle r="2.2" fill="#FDBA74"><animateMotion dur="2.7s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
+              <circle r="2.2" fill="#FDE68A"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
+              <circle r="2.2" fill="#FCA5A5"><animateMotion dur="3.1s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion></circle>
+              <circle r="2.2" fill="#93C5FD"><animateMotion dur="2.9s" repeatCount="indefinite"><mpath href="#e6"/></animateMotion></circle>
+              <circle r="2" fill="#FDBA74"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#e7"/></animateMotion></circle>
+              <circle r="2" fill="#FDBA74"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#e8"/></animateMotion></circle>
+              <circle r="2" fill="#FDBA74"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#e9"/></animateMotion></circle>
+            </g>
+
+            <!-- edge labels -->
+            <g class="elabels">
+              <text class="glabel" x="195" y="155" text-anchor="middle">Один IP</text>
+              <text class="glabel" x="195" y="240" text-anchor="middle">GA-ID</text>
+              <text class="glabel" x="365" y="155" text-anchor="middle">SSL SAN</text>
+              <text class="glabel" x="380" y="240" text-anchor="middle">NS-пара</text>
+              <text class="glabel" x="325" y="285" text-anchor="middle">favicon hash</text>
+            </g>
+
+            <!-- nodes -->
+            <g class="gnodes">
+              <!-- central -->
+              <g class="gnode floating" style="--dur:5s">
+                <circle cx="280" cy="210" r="26" fill="#EF4444"/>
+                <circle cx="280" cy="210" r="26" fill="none" stroke="#EF4444" class="gpulse"/>
+                <text x="280" y="215" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="JetBrains Mono">!</text>
+                <text class="gname" x="280" y="252" text-anchor="middle">examp1ebank.example</text>
+              </g>
+
+              <g class="gnode floating" style="--dur:6s;--delay:.2s">
+                <circle cx="150" cy="90" r="13" fill="#F97316"/>
+                <text class="gname" x="150" y="73" text-anchor="middle">crypt0-pay.example</text>
+              </g>
+              <g class="gnode floating" style="--dur:5.5s;--delay:.5s">
+                <circle cx="120" cy="250" r="15" fill="#EF4444"/>
+                <text class="gname" x="120" y="278" text-anchor="middle">bank-login.test</text>
+              </g>
+              <g class="gnode floating" style="--dur:6.4s;--delay:.7s">
+                <circle cx="430" cy="120" r="16" fill="#F97316"/>
+                <text class="gname" x="430" y="102" text-anchor="middle">card-pay.invalid</text>
+              </g>
+              <g class="gnode floating" style="--dur:6.8s;--delay:.3s">
+                <circle cx="470" cy="250" r="11" fill="#EAB308"/>
+                <text class="gname" x="470" y="276" text-anchor="middle">my-bank.test</text>
+              </g>
+              <g class="gnode floating" style="--dur:5.8s;--delay:.4s">
+                <circle cx="390" cy="330" r="13" fill="#EF4444"/>
+                <text class="gname" x="390" y="356" text-anchor="middle">gov-services.invalid</text>
+              </g>
+              <g class="gnode floating" style="--dur:5.2s;--delay:.6s">
+                <circle cx="210" cy="340" r="10" fill="#3B82F6"/>
+              </g>
+
+              <!-- scam cluster minor -->
+              <g class="gnode floating" style="--dur:4.7s;--delay:.2s"><circle cx="500" cy="90" r="7" fill="#F97316"/></g>
+              <g class="gnode floating" style="--dur:5.5s;--delay:.8s"><circle cx="500" cy="160" r="7" fill="#F97316"/></g>
+              <g class="gnode floating" style="--dur:6s;--delay:.1s"><circle cx="370" cy="70" r="7" fill="#F97316"/></g>
+              <g class="gnode floating" style="--dur:5.3s;--delay:.5s"><circle cx="460" cy="200" r="6" fill="#F97316"/></g>
+
+              <!-- bystanders -->
+              <g class="gnode floating" style="--dur:5.7s;--delay:.4s"><circle cx="80" cy="70" r="6" fill="#475569"/></g>
+              <g class="gnode floating" style="--dur:6.3s;--delay:.5s"><circle cx="80" cy="310" r="7" fill="#475569"/></g>
+
+              <!-- safe cluster -->
+              <g class="gnode floating" style="--dur:5s;--delay:.3s"><circle cx="100" cy="320" r="9" fill="#22C55E"/></g>
+              <g class="gnode floating" style="--dur:5.6s;--delay:.6s"><circle cx="60" cy="290" r="5" fill="#22C55E" opacity=".8"/></g>
+              <g class="gnode floating" style="--dur:6s;--delay:.2s"><circle cx="150" cy="360" r="5" fill="#22C55E" opacity=".8"/></g>
+            </g>
+          </svg>
+        </div>
+
+        <aside class="gp-side">
+          <ul class="gp-points">
+            <li>
+              <span class="gp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+              <div>
+                <b>10+ типов сигналов</b>
+                <p>IP, NS, analytics ID, SSL SAN, favicon hash, WHOIS, NS-пара Cloudflare.</p>
+              </div>
+            </li>
+            <li>
+              <span class="gp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+              <div>
+                <b>Каждый скан умнее предыдущего</b>
+                <p>База доменов растёт автоматически. Сегодня 50K, завтра — 500K.</p>
+              </div>
+            </li>
+            <li>
+              <span class="gp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <div>
+                <b>Связь со скам-сетью = алерт</b>
+                <p>Если домен связан с известной скам-сетью — Trust Score падает автоматически.</p>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PRICING =========================== -->
+<section class="pricing" id="pricing" data-screen-label="07 Pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Тарифы</span>
+      <h2>Начните бесплатно.<br>Масштабируйтесь когда нужно.</h2>
+      <p class="sub">Прозрачные тарифы. Все включают Trust Score, SSL и blacklist-check.</p>
+    </div>
+
+    <div class="toggle-wrap">
+      <div class="bill-toggle">
+        <button class="active" data-bill="m">Ежемесячно</button>
+        <button data-bill="y">Ежегодно <span class="save">−20%</span></button>
+      </div>
+    </div>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-tag"><span class="amt mono"><span data-p-m="0" data-p-y="0">0</span> ₽</span><span class="per">/ мес</span></div>
+        <div class="price-alt">бессрочно</div>
+        <div class="price-trial">&nbsp;</div>
+        <a class="btn btn-outline btn-block" href="#hero-scan">Начать бесплатно</a>
+        <ul class="price-feats">
+          <li><i class="chk"></i><b>3 проверки</b> / день</li>
+          <li><i class="chk"></i>15 базовых параметров</li>
+          <li><i class="chk"></i>Trust Score + цвет</li>
+          <li><i class="chk"></i>3 связанных домена</li>
+          <li class="dim"><i class="x"></i>Breakdown по категориям</li>
+          <li class="dim"><i class="x"></i>PDF / JSON экспорт</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Lite</div>
+        <div class="price-tag"><span class="amt mono"><span data-p-m="299" data-p-y="239">299</span> ₽</span><span class="per">/ мес</span></div>
+        <div class="price-alt"><span data-alt-m="≈ $3.49" data-alt-y="2 868 ₽/год · −720">≈ $3.49</span></div>
+        <div class="price-trial">7 дней trial без карты</div>
+        <a class="btn btn-outline btn-block" href="#">Попробовать</a>
+        <ul class="price-feats">
+          <li><i class="chk"></i><b>30 проверок</b> / мес</li>
+          <li><i class="chk"></i>40 параметров</li>
+          <li><i class="chk"></i>PDF-отчёт</li>
+          <li><i class="chk"></i>Breakdown по категориям</li>
+          <li><i class="chk"></i>10 связанных доменов</li>
+          <li><i class="chk"></i>История 30 дней</li>
+        </ul>
+      </div>
+
+      <div class="price-card featured">
+        <span class="pop-badge">Популярный</span>
+        <div class="price-name accent">Pro</div>
+        <div class="price-tag"><span class="amt mono"><span data-p-m="990" data-p-y="792">990</span> ₽</span><span class="per">/ мес</span></div>
+        <div class="price-alt"><span data-alt-m="≈ $11.49" data-alt-y="9 504 ₽/год · −2 376">≈ $11.49</span></div>
+        <div class="price-trial">14 дней trial без карты</div>
+        <a class="btn btn-primary btn-block" href="#">Попробовать 14 дней</a>
+        <ul class="price-feats">
+          <li><i class="chk"></i><b>200 проверок</b> / мес</li>
+          <li><i class="chk"></i><b>80+ параметров</b> (полный)</li>
+          <li><i class="chk"></i>PDF / JSON / CSV</li>
+          <li><i class="chk"></i>Мониторинг 5 доменов + алерты</li>
+          <li><i class="chk"></i>50 связанных доменов</li>
+          <li><i class="chk"></i>Платные источники (VirusTotal)</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Business</div>
+        <div class="price-tag"><span class="amt mono"><span data-p-m="5 990" data-p-y="4 792">5 990</span> ₽</span><span class="per">/ мес</span></div>
+        <div class="price-alt"><span data-alt-m="≈ $69.99" data-alt-y="57 504 ₽/год · −14 376">≈ $69.99</span></div>
+        <div class="price-trial">14 дней по заявке</div>
+        <a class="btn btn-blue-outline btn-block" href="#">Связаться</a>
+        <ul class="price-feats">
+          <li><i class="chk"></i><b>5 пользователей</b></li>
+          <li><i class="chk"></i><b>1 500 проверок</b> / мес</li>
+          <li><i class="chk"></i>REST API · 1 000 req/мес</li>
+          <li><i class="chk"></i>Bulk CSV до 100 за раз</li>
+          <li><i class="chk"></i>Webhook · Deep graph 3+</li>
+          <li><i class="chk"></i>Приоритетная поддержка 12 ч</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Enterprise</div>
+        <div class="price-tag"><span class="amt mono">от <span data-p-m="49 900" data-p-y="39 920">49 900</span> ₽</span><span class="per">/ мес</span></div>
+        <div class="price-alt"><span data-alt-m="от $599" data-alt-y="от 479 040 ₽/год">от $599</span></div>
+        <div class="price-trial">Демо + 30 дней пилота</div>
+        <a class="btn btn-blue-outline btn-block" href="#">Запросить демо</a>
+        <ul class="price-feats">
+          <li><i class="chk"></i><b>Безлимит</b> · users, scans, API</li>
+          <li><i class="chk"></i>White-label PDF</li>
+          <li><i class="chk"></i>Custom scoring rules</li>
+          <li><i class="chk"></i>SSO / SAML · Audit logs</li>
+          <li><i class="chk"></i>SLA 99.9% · On-prem</li>
+          <li><i class="chk"></i>Dedicated manager · 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pay-row">
+      <span class="pay-label">Способы оплаты:</span>
+      <span class="pay-m"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg> СБП <em>0.7%</em></span>
+      <span class="pay-m"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> Visa / MC</span>
+      <span class="pay-m mono">USDT</span>
+      <span class="pay-m mono">TON</span>
+      <span class="pay-m mono">BTC</span>
+      <span class="pay-note">Оплата через <b>СБП</b> — самый выгодный способ</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FAQ =========================== -->
+<section class="faq" id="faq" data-screen-label="08 FAQ">
+  <div class="container faq-container">
+    <div class="section-head" style="text-align:left;margin:0 0 48px;max-width:none">
+      <span class="eyebrow">FAQ</span>
+      <h2>Частые вопросы</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q"><span>Что такое Trust Score?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Алгоритмическая оценка <b>0–100</b> на основе 80+ параметров из 25+ публичных источников. <b>85+</b> (зелёный) — доверять, <b>40–59</b> (оранжевый) — высокий риск, <b>0–39</b> (красный) — опасно.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Это бесплатно?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Да — 3 проверки в день бесплатно, без регистрации. Для глубокого анализа — тарифы от 299 ₽/мес.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Как работает граф связей?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Анализируем 10+ типов сигналов: общий IP, GA-ID, SSL-сертификаты, NS-серверы, favicon hash, WHOIS — чтобы найти домены одного владельца и вскрыть сети мошенников.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Насколько точны результаты?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Алгоритм откалиброван на 130+ доменах (банки, госуслуги, известные скам-сайты). Точность — более 90%. Trust Score — алгоритмическая оценка, не юридический вердикт.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Какие данные вы собираете?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Минимум: email при регистрации (опционально). Платежи обрабатывает сертифицированный провайдер. Мы не храним номера карт.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Есть API?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Да, на тарифах <b>Business</b> и <b>Enterprise</b>. REST API, документация, webhooks, SDK.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Что если сайт получил низкий скор, но он легитимный?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Такое бывает с новыми или нишевыми сайтами. Скор учитывает возраст, публичность и юридическую прозрачность — со временем растёт. Можно оспорить через форму на сайте.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Чем вы лучше ScamAdviser / VirusTotal?</span><span class="ic">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">ScamAdviser не имеет графа связей. VirusTotal — инструмент для технических специалистов с ценой от $50K/год. <b>DomainScan</b> = понятный Trust Score + глубокая проверка + уникальный граф связей доменов — от 0 ₽/мес.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FINAL CTA =========================== -->
+<section class="final" data-screen-label="09 CTA">
+  <div class="final-bg" aria-hidden="true">
+    <div class="radar-grid"></div>
+    <div class="radar-sweep"></div>
+    <span class="float-shield s1"></span>
+    <span class="float-shield s2"></span>
+    <span class="float-shield s3"></span>
+    <span class="float-shield s4"></span>
+  </div>
+  <div class="container final-inner">
+    <h2>Проверьте первый сайт <br class="br"/>прямо сейчас</h2>
+    <p class="final-sub">Бесплатно. Без регистрации. За 30 секунд.</p>
+
+    <form class="scan-form scan-form-light" id="final-scan">
+      <div class="scan-field">
+        <span class="scan-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" placeholder="Введите домен…" autocomplete="off" spellcheck="false" />
+        <button class="btn-scan" type="submit">
+          <span class="lbl">Проверить</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- =========================== FOOTER =========================== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo light">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="11" cy="11" r="2.4"/><line x1="12.8" y1="12.8" x2="15" y2="15"/></svg></span>
+          DomainScan
+        </a>
+        <p>Trust Score, граф связей и глубокая проверка доменов. Безопасный интернет в один клик.</p>
+        <div class="foot-socials">
+          <a href="#" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5 2.5 12l5 2 2 6 4-4 5 4 3-15.5z"/></svg></a>
+          <a href="#" aria-label="VK"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 6h4l3 6 3-6h4l-4 7 5 7h-4l-4-6-4 6H2l5-7-5-7z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Продукт</h5><ul>
+        <li><a href="#pricing">Тарифы</a></li><li><a href="#">API</a></li><li><a href="#">Документация</a></li><li><a href="#">Changelog</a></li>
+      </ul></div>
+      <div class="foot-col"><h5>Ресурсы</h5><ul>
+        <li><a href="#">Блог</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Партнёрам</a></li><li><a href="#">Контакты</a></li>
+      </ul></div>
+      <div class="foot-col"><h5>Правовая</h5><ul>
+        <li><a href="#">Условия использования</a></li><li><a href="#">Политика конф.</a></li><li><a href="#">Дисклеймер</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 DomainScan. Trust Score — алгоритмическая оценка, не юридический вердикт.</span>
+      <span class="mono">build · 26.05.13</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Tweaks panel -->
+<div class="tweaks" id="tweaks">
+  <header><h5>Tweaks</h5><button id="closeTweaks" aria-label="Close">×</button></header>
+  <div class="tweaks-body">
+    <div class="tw-row">
+      <label>Акцент</label>
+      <div class="tw-swatches" id="accentSwatches">
+        <div class="tw-swatch active" data-c="#1E40AF" style="background:#1E40AF"></div>
+        <div class="tw-swatch" data-c="#7C3AED" style="background:#7C3AED"></div>
+        <div class="tw-swatch" data-c="#0891B2" style="background:#0891B2"></div>
+        <div class="tw-swatch" data-c="#0F172A" style="background:#0F172A"></div>
+      </div>
+    </div>
+    <div class="tw-row"><label>Анимации</label>
+      <button id="animBtn" class="tw-toggle active">включены</button>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="tweak-defaults">
+{"accent":"#1E40AF","anims":true}
+</script>
+<script src="landing.js"></script>
+</body>
+</html>

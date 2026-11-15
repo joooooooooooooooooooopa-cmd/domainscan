@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "domainscan"
+version = "0.1.0"
+description = "Domain trust scanner"
+authors = ["DomainScan"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.28"
+dnspython = "^2.7"
+beautifulsoup4 = "^4.12"
+lxml = "^5.3"
+langdetect = "^1.0"
+tldextract = "^5.1"
+mmh3 = "^5.1"
+rich = "^13.9"
+
+[tool.poetry.scripts]
+scan = "cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
